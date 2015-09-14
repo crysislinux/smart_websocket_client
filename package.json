@@ -1,0 +1,37 @@
+{
+  "name": "smart_websocket_client",
+  "version": "1.0.0",
+  "description": "Smart Websocket Client is a chrome extension to help developers develop and test websocket.",
+  "main": "src/app.js",
+  "dependencies": {
+    "alt": "^0.17.3",
+    "babel-runtime": "^5.8.24",
+    "react": "^0.13.3",
+    "react-router": "^1.0.0-rc1"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.24",
+    "babel-loader": "^5.3.2",
+    "gulp": "^3.9.0",
+    "html-webpack-plugin": "^1.6.1",
+    "node-sass": "^3.3.2",
+    "sass-loader": "^2.0.1",
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "scripts": {
+    "build": "webpack --progress --profile --colors",
+    "watch": "webpack-dev-server --hot --inline --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crysislinux/smart_websocket_client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crysislinux/smart_websocket_client/issues"
+  },
+  "homepage": "https://github.com/crysislinux/smart_websocket_client"
+}
