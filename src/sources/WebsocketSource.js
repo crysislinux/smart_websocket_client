@@ -3,7 +3,7 @@ import EventEmitter from 'events'
 
 export const OPEN_EVENT = 'open';
 export const CLOSE_EVENT = 'close';
-export const ERROR_EVENT = 'error';
+export const ERROR_EVENT = '_error'; //event cannot just be 'error', or the EventEmitter will raise an error.
 export const MESSAGE_EVENT = 'message';
 
 
