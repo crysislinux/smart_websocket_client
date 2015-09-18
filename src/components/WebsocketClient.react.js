@@ -1,9 +1,9 @@
 import React from 'react';
 
-import AddressBar from './AddressBar';
-import Content from './Content';
-import Result from './Result';
-import History from './History';
+import AddressBar from './AddressBar.react';
+import Content from './Content.react';
+import Result from './Result.react';
+import History from './History.react';
 
 
 var content = {

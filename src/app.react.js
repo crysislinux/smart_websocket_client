@@ -1,5 +1,5 @@
 import React from 'react';
-import WebsocketClient from './components/WebsocketClient';
+import WebsocketClient from './components/WebsocketClient.react';
 
 
 React.render(

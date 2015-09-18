@@ -10,7 +10,7 @@ module.exports = {
   target: 'web',
   cache: true,
   entry: {
-    app: path.join(srcPath, 'app.jsx'),
+    app: path.join(srcPath, 'app.react.js'),
     common: ['react', 'react-router', 'alt']
   },
   resolve: {
