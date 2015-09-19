@@ -14,8 +14,9 @@ module.exports = {
     common: ['react', 'react-router', 'alt']
   },
   resolve: {
-    root: [nodePath],
-    extensions: ['', '.jsx', '.js']
+    // in case of something in srcPath named same as modules in node_modules, search nodePath first, then srcPath.
+    root: [nodePath, srcPath],
+    extensions: ['', '.js', '.css']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -26,7 +27,9 @@ module.exports = {
 
   module: {
     loaders: [
-      {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'}
+      {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
+      {test: /\.css$/, exclude: /node_modules/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'},
+      {test: /\.png$/, exclude: /node_modules/, loader: 'file?name=./assets/image/[hash].[ext]'}
     ]
   },
   plugins: [

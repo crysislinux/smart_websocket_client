@@ -1,0 +1,4 @@
+.addressBar {
+  composes: green from './base.css';
+  background-image: url('../images/bg.png');
+}
