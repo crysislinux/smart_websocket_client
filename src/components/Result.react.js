@@ -32,6 +32,7 @@ var Result = React.createClass({
     return (
       <div className={styles.root}>
         <AceEditor
+          className={styles.contentEditor}
           mode="javascript"
           theme="github"
           height="360"
