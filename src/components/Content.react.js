@@ -23,7 +23,6 @@ var Content = React.createClass({
   },
 
   _onChange(data) {
-    console.log(data)
     this.setState({
       content: data
     })
