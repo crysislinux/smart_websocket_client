@@ -22,7 +22,7 @@ var WebsocketClient = React.createClass({
         <div className={styles.content}>
           <AddressBar />
           <Content content={JSON.stringify(content)} />
-          <Result result="test result" />
+          <Result />
         </div>
       </div>
     );
