@@ -1,0 +1,13 @@
+.root {
+  width: 100%;
+  padding: 4px 0;
+  display: flex;
+}
+
+.input {
+  flex-grow: 1;
+  margin-right: 20px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  border: 1px solid #666;
+}

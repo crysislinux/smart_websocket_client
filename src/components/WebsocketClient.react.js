@@ -4,7 +4,7 @@ import AddressBar from './AddressBar.react';
 import Content from './Content.react';
 import Result from './Result.react';
 import History from './History.react';
-import styles from '../assets/styles/addressBar.css';
+import styles from '../assets/styles/components/websocketClient.css';
 
 
 var content = {
@@ -15,11 +15,11 @@ var content = {
 var WebsocketClient = React.createClass({
   render() {
     return (
-      <div className={styles.addressBar}>
-        <div>
-          <History />
+      <div className={styles.root}>
+        <div className={styles.sidebar}>
+          <History content='I am history' />
         </div>
-        <div>
+        <div className={styles.content}>
           <AddressBar />
           <Content content={JSON.stringify(content)} />
           <Result result="test result" />

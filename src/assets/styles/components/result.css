@@ -1,0 +1,11 @@
+.root {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 200px;
+  padding: 4px;
+}
