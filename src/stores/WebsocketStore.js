@@ -9,7 +9,8 @@ class WebsocketStore {
     this.bindListeners({
       handleWebsocketOpened: WebsocketActions.WEBSOCKET_OPENED,
       handleWebsocketFailed: WebsocketActions.WEBSOCKET_FAILED,
-      handleWebsocketClosed: WebsocketActions.WEBSOCKET_CLOSED
+      handleWebsocketClosed: WebsocketActions.WEBSOCKET_CLOSED,
+      handleWebsocketReceived: WebsocketActions.WEBSOCKET_RECEIVED
     });
   }
 
@@ -26,8 +27,8 @@ class WebsocketStore {
     this.errorMessage = errorMessage;
   }
 
-  handleMessageReceived(message) {
-
+  handleWebsocketReceived(data) {
+    this.data = data;
   }
 }
 

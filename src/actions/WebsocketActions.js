@@ -6,18 +6,23 @@ class WebsocketActions {
   initWebsocket() {
     WebsocketSource.on(constants.OPEN_EVENT, this.actions.websocketOpened);
     WebsocketSource.on(constants.CLOSE_EVENT, this.actions.websocketClosed);
+    WebsocketSource.on(constants.MESSAGE_EVENT, this.actions.websocketReceived);
   }
 
   openWebsocket(address) {
     try {
       WebsocketSource.connect(address);
     } catch (e) {
-      this.actions.websocketFailed('Connect failed: ' + e.message);
+      this.actions._websocketFailed('Connect failed: ' + e.message);
     }
   }
 
   closeWebsocket() {
     WebsocketSource.close();
+  }
+
+  sendData(data) {
+    WebsocketSource.send(data);
   }
 
   websocketClosed() {
@@ -31,6 +36,11 @@ class WebsocketActions {
   websocketFailed(message) {
     console.log(message);
     this.dispatch(message);
+  }
+
+  websocketReceived(data) {
+    console.log(data);
+    this.dispatch(data);
   }
 }
 

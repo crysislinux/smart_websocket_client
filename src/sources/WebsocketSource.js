@@ -26,9 +26,10 @@ class WebsocketSource {
     return this;
   }
 
-  send(message) {
+  send(data) {
     if (this.connection) {
-      this.connection.send(message);
+      console.log('sending data:', data);
+      this.connection.send(data);
     }
   }
 
