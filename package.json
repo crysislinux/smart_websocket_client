@@ -8,6 +8,7 @@
     "babel-runtime": "^5.8.24",
     "brace": "^0.5.1",
     "js-beautify": "^1.5.10",
+    "lodash": "^3.10.1",
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
     "react-ace": "^2.3.0",

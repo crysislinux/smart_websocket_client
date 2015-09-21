@@ -7,13 +7,15 @@ class WebsocketActions {
     WebsocketSource.on(constants.OPEN_EVENT, this.actions.websocketOpened);
     WebsocketSource.on(constants.CLOSE_EVENT, this.actions.websocketClosed);
     WebsocketSource.on(constants.MESSAGE_EVENT, this.actions.websocketReceived);
+    WebsocketSource.on(constants.EXCEPTION_EVENT, this.actions.websocketFailed);
+    WebsocketSource.on(constants.ERROR_EVENT, this.actions.websocketFailed);
   }
 
   openWebsocket(address) {
     try {
       WebsocketSource.connect(address);
     } catch (e) {
-      this.actions._websocketFailed('Connect failed: ' + e.message);
+      this.actions.websocketFailed(e.message);
     }
   }
 

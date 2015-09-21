@@ -1,0 +1,20 @@
+.messages {
+  width: 100%;
+  padding: 4px 0;
+  list-style: none;
+}
+
+.error {
+  composes: messages;
+  background-color: #FA2500;
+}
+
+.info {
+  composes: messages;
+  background-color: #3FC864;
+}
+
+.message {
+  color: white;
+  padding: 4px 8px;
+}
