@@ -15,11 +15,17 @@ var Content = React.createClass({
     WebsocketActions.sendData(this.state.content);
   },
 
+  _onChange(event) {
+    this.setState({
+      content: event.target.value
+    })
+  },
+
   render() {
     return (
       <div className={styles.root}>
         <button type="button" className={buttonStyles.button} onClick={this._onClick}>Send</button>
-        <textarea className={styles.textarea} value={this.state.content}></textarea>
+        <textarea className={styles.textarea} onChange={this._onChange} value={this.state.content}></textarea>
       </div>
     );
   }
