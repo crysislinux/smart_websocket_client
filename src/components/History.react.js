@@ -26,18 +26,15 @@ var History = React.createClass({
       requests: state.requests
     });
   },
-  
+
   render() {
     var rows = [];
 
     for(let i = this.state.requests.length - 1; i >= 0; i--) {
       let request = this.state.requests[i];
       request.id = i;
-      rows.push(<HistoryItem request={request} />);
+      rows.push(<HistoryItem key={request.id} request={request} />);
     }
-    this.state.requests.forEach((request, index) => {
-
-    });
 
     return (
       <div className={styles.root}>
