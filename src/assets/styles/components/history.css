@@ -10,12 +10,26 @@
   padding: 0;
 }
 
+.itemContainer {
+  border: 1px solid #3EC764;
+  border-bottom: 0;
+}
+
+.itemContainer:last-of-type {
+  border-bottom: 1px solid #3EC764;
+}
+
 .item {
-  margin: 4px 0;
-  background: lightseagreen;
+  box-sizing: border-box;
   display: block;
   width: 100%;
   cursor: pointer;
-  padding: 4px 8px;
-  color: lightgray;
+  padding: 6px 8px;
+  transition: all 0.2s;
 }
+
+
+.item:hover {
+  background: #44c767;
+}
+

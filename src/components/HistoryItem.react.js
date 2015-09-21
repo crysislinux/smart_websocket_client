@@ -16,7 +16,7 @@ var HistoryItem = React.createClass({
     var request = this.props.request;
 
     return (
-      <li onClick={this._onClick}>
+      <li onClick={this._onClick} className={styles.itemContainer}>
         <label className={styles.item}>Request #{request.id}</label>
       </li>
     );
