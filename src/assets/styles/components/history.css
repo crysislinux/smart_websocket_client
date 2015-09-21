@@ -1,5 +1,21 @@
 .root {
   width: 100%;
-  max-height: 850px;
+  max-height: 858px;
   overflow-y: scroll;
+}
+
+.container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin: 4px 0;
+  background: lightseagreen;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: lightgray;
 }

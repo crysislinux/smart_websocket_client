@@ -1,5 +1,6 @@
 import React from 'react';
 import WebsocketActions from '../actions/WebsocketActions'
+import WebsocketStore from '../stores/WebsocketStore'
 import styles from '../assets/styles/components/content.css'
 import buttonStyles from '../assets/styles/components/button.css'
 import AceEditor from 'react-ace';
@@ -11,20 +12,29 @@ import beautifier from 'js-beautify';
 var Content = React.createClass({
   getInitialState() {
     return {
-      content: this.props.content && beautifier(this.props.content, {indent_size: 2})
+      content: ''
     }
   },
 
   componentDidMount() {
+    WebsocketStore.listen(this._onChange);
+  },
+
+  componentWillUnmount() {
+    WebsocketStore.unlisten(this._onChange);
   },
 
   _onClick(){
     WebsocketActions.sendData(this.state.content);
   },
 
-  _onChange(data) {
+  _onContentChange(data) {
+    WebsocketActions.requestDataChanged(data);
+  },
+
+  _onChange(state) {
     this.setState({
-      content: data
+      content: state.request_data
     })
   },
 
@@ -37,7 +47,7 @@ var Content = React.createClass({
           theme="github"
           height="300"
           width="100%"
-          onChange={this._onChange}
+          onChange={this._onContentChange}
           name="contentEditor"
           value={this.state.content}
           editorProps={{$blockScrolling: true}}

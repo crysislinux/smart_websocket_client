@@ -29,7 +29,7 @@ class WebsocketActions {
   }
 
   dataSent(request) {
-    this.dispatch(request)
+    this.dispatch(request);
   }
 
   websocketClosed() {
@@ -48,6 +48,18 @@ class WebsocketActions {
   websocketReceived(data) {
     console.log(data);
     this.dispatch(data);
+  }
+
+  addressChanged(address) {
+    this.dispatch(address);
+  }
+
+  requestDataChanged(data) {
+    this.dispatch(data);
+  }
+
+  loadRequest(request) {
+    this.dispatch(request);
   }
 }
 

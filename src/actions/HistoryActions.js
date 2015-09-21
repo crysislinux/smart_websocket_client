@@ -69,6 +69,10 @@ class HistoryActions {
   requestsLoaded(requests) {
     this.dispatch(requests);
   }
+
+  loadRequest(request) {
+    this.dispatch(request);
+  }
 }
 
 export default alt.createActions(HistoryActions);
