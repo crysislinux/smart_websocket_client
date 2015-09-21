@@ -9,6 +9,7 @@ class WebsocketActions {
     WebsocketSource.on(constants.MESSAGE_EVENT, this.actions.websocketReceived);
     WebsocketSource.on(constants.EXCEPTION_EVENT, this.actions.websocketFailed);
     WebsocketSource.on(constants.ERROR_EVENT, this.actions.websocketFailed);
+    WebsocketSource.on(constants.SENT_EVENT, this.actions.dataSent);
   }
 
   openWebsocket(address) {
@@ -25,6 +26,10 @@ class WebsocketActions {
 
   sendData(data) {
     WebsocketSource.send(data);
+  }
+
+  dataSent(request) {
+    this.dispatch(request)
   }
 
   websocketClosed() {

@@ -6,6 +6,7 @@ export const CLOSE_EVENT = 'close';
 export const ERROR_EVENT = '_error'; //event cannot just be 'error', or the EventEmitter will raise an error.
 export const MESSAGE_EVENT = 'message';
 export const EXCEPTION_EVENT = 'exception';
+export const SENT_EVENT = 'sent';
 
 
 var self;
@@ -30,6 +31,10 @@ class WebsocketSource {
   send(data) {
     if (this.connection) {
       console.log('sending data:', data);
+      this.emit(SENT_EVENT, {
+        address: this.connection.url,
+        data: data
+      });
       this.connection.send(data);
     } else {
       self.emit(EXCEPTION_EVENT, 'The websocket has not connected to the server');
