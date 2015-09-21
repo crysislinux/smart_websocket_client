@@ -12,10 +12,11 @@
   text-shadow:0 1px 0 #2f6627;
   outline: none;
 }
+
 .button:hover {
   background-color:#5cbf2a;
 }
+
 .button:active {
-  position:relative;
-  top:1px;
+  background-color:darkgreen;
 }
