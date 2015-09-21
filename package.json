@@ -6,8 +6,11 @@
   "dependencies": {
     "alt": "^0.17.3",
     "babel-runtime": "^5.8.24",
+    "brace": "^0.5.1",
+    "js-beautify": "^1.5.10",
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
+    "react-ace": "^2.3.0",
     "react-router": "^1.0.0-rc1"
   },
   "devDependencies": {
