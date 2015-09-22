@@ -48,7 +48,7 @@ var Result = React.createClass({
           name="resultEditor"
           value={this._formattedCode(this.state.content)}
           readOnly={true}
-          editorProps={{$blockScrolling: true}}
+          editorProps={{$blockScrolling: Infinity}}
           />
       </div>
     );

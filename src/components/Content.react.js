@@ -52,7 +52,7 @@ var Content = React.createClass({
           onChange={this._onContentChange}
           name="contentEditor"
           value={this.state.content}
-          editorProps={{$blockScrolling: true}}
+          editorProps={{$blockScrolling: Infinity}}
           />
       </div>
     );
