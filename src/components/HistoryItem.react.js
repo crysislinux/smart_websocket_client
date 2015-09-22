@@ -9,15 +9,16 @@ var HistoryItem = React.createClass({
   },
 
   _onDestroyClick() {
-
+    HistoryActions.destroyRequest(this.props.request.id);
   },
 
   render() {
     var request = this.props.request;
 
     return (
-      <li onClick={this._onClick} className={styles.itemContainer}>
-        <label className={styles.item}>Request #{request.id}</label>
+      <li className={styles.itemContainer}>
+        <label className={styles.item} onClick={this._onClick}>Request #{request.id}</label>
+        <button className={styles.destroy} type="button" onClick={this._onDestroyClick}></button>
       </li>
     );
   }

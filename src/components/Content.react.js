@@ -42,11 +42,13 @@ var Content = React.createClass({
     return (
       <div className={styles.root}>
         <button type="button" className={buttonStyles.button} onClick={this._onClick}>Send</button>
-        <AceEditor className={styles.contentEditor}
+        <AceEditor
+          className={styles.contentEditor}
           mode="javascript"
           theme="github"
           height="300"
           width="100%"
+          tabSize={2}
           onChange={this._onContentChange}
           name="contentEditor"
           value={this.state.content}

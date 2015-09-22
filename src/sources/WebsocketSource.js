@@ -29,7 +29,7 @@ class WebsocketSource {
   }
 
   send(data) {
-    if (this.connection) {
+    if (this.connection && this.connection.readyState === WebSocket.OPEN) {
       console.log('sending data:', data);
       this.emit(SENT_EVENT, {
         address: this.connection.url,
@@ -48,6 +48,10 @@ class WebsocketSource {
     }
   }
 
+  _reset() {
+   this.close();
+  }
+
   _onOpen() {
     self.emit(OPEN_EVENT);
   }
@@ -57,6 +61,7 @@ class WebsocketSource {
   }
 
   _onError(event) {
+    this._reset();
     self.emit(ERROR_EVENT, 'Can not connect to ' + event.target.url);
   }
 

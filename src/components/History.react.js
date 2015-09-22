@@ -27,17 +27,27 @@ var History = React.createClass({
     });
   },
 
+  _onClearClicked() {
+    HistoryActions.clearRequests();
+  },
+
   render() {
     var rows = [];
 
-    for(let i = this.state.requests.length - 1; i >= 0; i--) {
+    for(let i = 0; i < this.state.requests.length; i++) {
       let request = this.state.requests[i];
-      request.id = i;
       rows.push(<HistoryItem key={request.id} request={request} />);
     }
 
     return (
       <div className={styles.root}>
+        <div className={styles.header}>
+          <label className={styles.title}>History</label>
+          <div className={styles.actions}>
+            <button className={styles.clearButton} type="button" onClick={this._onClearClicked}>Clear</button>
+          </div>
+        </div>
+
         <ul className={styles.container}>
           {rows}
         </ul>
