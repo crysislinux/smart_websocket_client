@@ -57,10 +57,6 @@ class WebsocketActions {
   requestDataChanged(data) {
     this.dispatch(data);
   }
-
-  loadRequest(request) {
-    this.dispatch(request);
-  }
 }
 
 export default alt.createActions(WebsocketActions);
