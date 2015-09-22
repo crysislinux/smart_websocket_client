@@ -30,18 +30,17 @@ var History = React.createClass({
     var list = [];
     var className = styles.error;
 
-    console.log(this.state);
     if(_.isArray(this.state.messages)) {
-      this.state.messages.forEach(function(item) {
-        list.push(<li className={styles.message}>{item}</li>);
+      this.state.messages.forEach(function(item, index) {
+        list.push(<li key={index} className={styles.message}>{item}</li>);
       })
     } else if(this.state.messages) {
-      list.push(<li className={styles.message}>{this.state.messages}</li>);
+      list.push(<li key={0} className={styles.message}>{this.state.messages}</li>);
     }
 
     if(list.length === 0) {
       className = styles.info;
-      list.push(<li className={styles.message}>Everything is ok, ready to go!</li>)
+      list.push(<li key={0} className={styles.message}>Everything is ok, ready to go!</li>)
     }
 
     return (

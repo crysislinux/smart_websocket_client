@@ -10,4 +10,9 @@
   padding: 4px 8px;
   border-radius: 2px;
   border: 1px solid #666;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #3EC864;
 }

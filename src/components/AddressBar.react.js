@@ -8,7 +8,6 @@ var AddressBar = React.createClass({
   getInitialState() {
     var websocket = WebsocketStore.getState();
     return {
-      address: 'ws://demo.gugud.com:5721/websocket',
       websocket: websocket
     };
   },
@@ -32,21 +31,19 @@ var AddressBar = React.createClass({
     if (this.state.websocket.connected) {
       WebsocketActions.closeWebsocket();
     } else {
-      WebsocketActions.openWebsocket(this.state.address);
+      WebsocketActions.openWebsocket(this.state.websocket.address);
     }
   },
 
   _onAddressChange(event) {
-    this.setState({
-      address: event.target.value
-    })
+    WebsocketActions.addressChanged(event.target.value);
   },
 
   render() {
     var text = this.state.websocket.connected ? 'Disconnect' : 'Connect';
     return (
       <div className={styles.root}>
-        <input className={styles.input} type="text" placeholder="Websocket address" value={this.state.address} onChange={this._onAddressChange} />
+        <input className={styles.input} type="text" placeholder="Websocket address" value={this.state.websocket.address} onChange={this._onAddressChange} />
         <button className={buttonStyle.button} type="button" onClick={this._onClick}>{text}</button>
       </div>
     );

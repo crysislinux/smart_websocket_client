@@ -1,3 +1,3 @@
 chrome.browserAction.onClicked.addListener(function() {
-  chrome.tabs.create({'url': "dist/index.html"});
+  chrome.tabs.create({'url': "index.html"});
 });

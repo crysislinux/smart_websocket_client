@@ -22,22 +22,31 @@ var Result = React.createClass({
     WebsocketStore.unlisten(this._onChange);
   },
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return !(nextState.content === this.state.content);
+  },
+
   _onChange(state) {
     this.setState({
-      content: state.data && beautifier(state.data, {indent_size: 2})
+      content: state.data
     });
+  },
+
+  _formattedCode(content) {
+    return content && beautifier(content, {indent_size: 2})
   },
 
   render() {
     return (
       <div className={styles.root}>
         <AceEditor
+          className={styles.contentEditor}
           mode="javascript"
           theme="github"
           height="360"
           width="100%"
           name="resultEditor"
-          value={this.state.content}
+          value={this._formattedCode(this.state.content)}
           readOnly={true}
           editorProps={{$blockScrolling: true}}
           />

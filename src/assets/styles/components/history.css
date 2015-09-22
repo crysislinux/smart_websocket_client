@@ -1,3 +1,90 @@
 .root {
   width: 100%;
+  max-height: 858px;
+  overflow-y: scroll;
+}
+
+.container {
+  list-style: none;
+  margin: 0;
+  padding: 0 4px;
+}
+
+.itemContainer {
+  border: 1px solid #3EC764;
+  border-bottom: 0;
+  position: relative;
+}
+
+.itemContainer:last-of-type {
+  border-bottom: 1px solid #3EC764;
+}
+
+.itemContainer:first-of-type {
+  border-top: 0;
+}
+
+.item {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 6px 8px;
+  transition: all 0.2s;
+}
+
+.destroy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  margin: auto 0;
+  font-size: 18px;
+  color: #a88a8a;
+  transition: all 0.2s;
+  padding: 0;
+  border: 0;
+  background: none;
+  vertical-align: baseline;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.destroy:hover {
+  text-shadow: 0 0 1px #000,
+  0 0 10px rgba(199, 107, 107, 0.8);
+  transform: scale(1.3);
+}
+
+.destroy:after {
+  content: '✖';
+}
+
+.itemContainer:hover .destroy {
+  display: block;
+}
+
+.header {
+  height: 30px;
+  border-bottom: 1px solid #3EC764;
+  padding: 8px 4px;
+  line-height: 30px;
+}
+
+.title {
+  padding-left: 10px;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.actions {
+  float: right;
+}
+
+.clearButton {
+  composes: button from './button.css'
 }

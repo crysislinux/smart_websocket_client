@@ -9,6 +9,7 @@ class WebsocketActions {
     WebsocketSource.on(constants.MESSAGE_EVENT, this.actions.websocketReceived);
     WebsocketSource.on(constants.EXCEPTION_EVENT, this.actions.websocketFailed);
     WebsocketSource.on(constants.ERROR_EVENT, this.actions.websocketFailed);
+    WebsocketSource.on(constants.SENT_EVENT, this.actions.dataSent);
   }
 
   openWebsocket(address) {
@@ -27,6 +28,10 @@ class WebsocketActions {
     WebsocketSource.send(data);
   }
 
+  dataSent(request) {
+    this.dispatch(request);
+  }
+
   websocketClosed() {
     this.dispatch();
   }
@@ -36,12 +41,24 @@ class WebsocketActions {
   }
 
   websocketFailed(message) {
-    console.log(message);
+    if(__DEV__) {
+      console.log(message);
+    }
     this.dispatch(message);
   }
 
   websocketReceived(data) {
-    console.log(data);
+    if(__DEV__) {
+      console.log(data);
+    }
+    this.dispatch(data);
+  }
+
+  addressChanged(address) {
+    this.dispatch(address);
+  }
+
+  requestDataChanged(data) {
     this.dispatch(data);
   }
 }
