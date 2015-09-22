@@ -38,7 +38,7 @@
     "url": "https://github.com/crysislinux/smart_websocket_client.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/crysislinux/smart_websocket_client/issues"
   },
