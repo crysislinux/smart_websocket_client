@@ -42,7 +42,6 @@ var config = {
       {test: /\.css$/, exclude: /node_modules/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'},
       {test: /node_modules.*\.css/, loader: 'style!css'},
       {test: /\.png$/, loader: 'file?name=./assets/image/[hash].[ext]'},
-      {test: /assets\/chrome/, loader: 'file?name=[name].[ext]'}
     ],
     noParse: []
   },
