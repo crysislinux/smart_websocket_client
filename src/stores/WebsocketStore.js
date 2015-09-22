@@ -46,7 +46,7 @@ class WebsocketStore {
 
   handleInitialRequest(requests) {
     if(requests.length > 0) {
-      var request = requests[requests.length - 1];
+      var request = requests[0];
       this.address = request.address;
       this.request_data = request.data;
     }
