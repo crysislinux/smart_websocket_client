@@ -36,7 +36,8 @@ var config = {
       {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
       {test: /\.css$/, exclude: /node_modules/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'},
       {test: /node_modules.*\.css/, loader: 'style!css'},
-      {test: /\.png$/, loader: 'file?name=./assets/image/[hash].[ext]'}
+      {test: /\.png$/, loader: 'file?name=./assets/image/[hash].[ext]'},
+      {test: /assets\/chrome/, loader: 'file?name=[name].[ext]'}
     ],
     noParse: []
   },
