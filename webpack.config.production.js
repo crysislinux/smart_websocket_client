@@ -11,40 +11,30 @@ var definePlugin = new webpack.DefinePlugin({
   __DEV__: process.env.PRODUCTION ? false : true
 });
 
-var deps = [
-  'react/dist/react.min.js',
-  'alt/dist/alt.min.js'
-];
-
 var config = {
   target: 'web',
-  cache: true,
   entry: {
     app: path.join(srcPath, 'app.react.js'),
     common: ['react', 'react-router', 'alt', 'brace', 'react-ace', 'lodash', 'object-assign']
   },
   resolve: {
-    // in case of something in srcPath named same as modules in node_modules, search nodePath first, then srcPath.
     root: [nodeModulesPath, srcPath],
-    extensions: ['', '.js', '.css'],
-    alias: {}
+    extensions: ['', '.js', '.css']
   },
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '',
-    filename: '[name].js',
-    pathinfo: true
+    filename: '[name].js'
   },
 
   module: {
     loaders: [
       {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
-      {test: /\.css$/, exclude: /node_modules/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'},
+      {test: /\.css$/, exclude: /node_modules/, loader: 'style!css?modules&importLoaders=1&localIdentName=[hash:base64:5]'},
       {test: /node_modules.*\.css/, loader: 'style!css'},
       {test: /\.png$/, loader: 'file?name=./assets/image/[hash].[ext]'},
       {test: /assets\/chrome/, loader: 'file?name=[name].[ext]'}
-    ],
-    noParse: []
+    ]
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
@@ -52,23 +42,18 @@ var config = {
       inject: true,
       template: 'src/index.html'
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    }),
     new webpack.NoErrorsPlugin()
   ],
 
-  debug: true,
-  devtool: 'eval-cheap-module-source-map',
-  devServer: {
-    contentBase: './dist',
-    historyApiFallback: true
-  }
+  debug: false
 };
 
 config.plugins.push(definePlugin);
 
-deps.forEach(function (dep) {
-  var depPath = path.resolve(nodeModulesPath, dep);
-  config.resolve.alias[dep.split(path.sep)[0]] = depPath;
-  config.module.noParse.push(depPath);
-});
 
 module.exports = config;

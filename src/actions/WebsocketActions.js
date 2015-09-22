@@ -41,7 +41,9 @@ class WebsocketActions {
   }
 
   websocketFailed(message) {
-    console.log(message);
+    if(__DEV__) {
+      console.log('dev', message);
+    }
     this.dispatch(message);
   }
 
