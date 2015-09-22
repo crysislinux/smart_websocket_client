@@ -42,13 +42,15 @@ class WebsocketActions {
 
   websocketFailed(message) {
     if(__DEV__) {
-      console.log('dev', message);
+      console.log(message);
     }
     this.dispatch(message);
   }
 
   websocketReceived(data) {
-    console.log(data);
+    if(__DEV__) {
+      console.log(data);
+    }
     this.dispatch(data);
   }
 

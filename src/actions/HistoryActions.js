@@ -23,7 +23,9 @@ class HistoryActions {
     };
 
     historyDb.onError = function(tx, e) {
-      console.log('database error', e.message);
+      if(__DEV__) {
+        console.log('database error', e.message);
+      }
     };
 
     historyDb.onInsertSuccess = function(request) {

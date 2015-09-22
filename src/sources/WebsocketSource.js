@@ -30,7 +30,9 @@ class WebsocketSource {
 
   send(data) {
     if (this.connection && this.connection.readyState === WebSocket.OPEN) {
-      console.log('sending data:', data);
+      if(__DEV__) {
+        console.log('sending data:', data);
+      }
       this.emit(SENT_EVENT, {
         address: this.connection.url,
         data: data
