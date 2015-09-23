@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Smart Websocket Client : Smart Websocket Client is a chrome extension to help developers develop and test websocket.">
@@ -9,99 +9,41 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>Smart Websocket Client</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/crysislinux/smart_websocket_client">View on GitHub</a>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+        <a id="forkme_banner" href="https://github.com/crysislinux/smart_websocket_client">View on GitHub</a>
 
-          <h1 id="project_title">Smart Websocket Client</h1>
-          <h2 id="project_tagline">Smart Websocket Client is a chrome extension to help developers develop and test websocket.</h2>
+        <h1 id="project_title">Smart Websocket Client</h1>
+        <h2 id="project_tagline">Smart Websocket Client is a chrome extension to help developers develop and test websocket.</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/crysislinux/smart_websocket_client/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/crysislinux/smart_websocket_client/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/crysislinux/smart_websocket_client/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/crysislinux/smart_websocket_client/tarball/master">Download this project as a tar.gz file</a>
+        </section>
+    </header>
+</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="smart-websocket-client" class="anchor" href="#smart-websocket-client" aria-hidden="true"><span class="octicon octicon-link"></span></a>Smart Websocket Client</h1>
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+        <div id="ReactApp"></div>
+    </section>
+</div>
 
-<p>Smart Websocket Client is a chrome extension to help developers develop and test websocket.</p>
-
-<h1>
-<a id="why-another-websocket-client" class="anchor" href="#why-another-websocket-client" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why another websocket client</h1>
-
-<p>I checked websocket clients in chrome web store and I am using Simple Websocket Client. It is a great tool for testing. But it still lack some features. I hope that Smart Websocket Client will fill the gap.</p>
-
-<h1>
-<a id="screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span class="octicon octicon-link"></span></a>ScreenShot</h1>
-
-<p><img src="http://i.imgur.com/VUcGU7e.jpg" alt="Imgur"></p>
-
-<h1>
-<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h1>
-
-<ul>
-<li>Rich text editor integration</li>
-<li>Remember history input like some web api testing tools(postman) does.</li>
-</ul>
-
-<h1>
-<a id="future-features" class="anchor" href="#future-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future Features</h1>
-
-<ul>
-<li>Create fake messages for testing. This is useful if the backend is not ready yet but you want to develop your frontend code now(going to be implemented).</li>
-<li>Account system, you can share the messages to your team. </li>
-</ul>
-
-<h1>
-<a id="install--build" class="anchor" href="#install--build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install &amp;&amp; Build</h1>
-
-<h3>
-<a id="important" class="anchor" href="#important" aria-hidden="true"><span class="octicon octicon-link"></span></a>Important</h3>
-
-<p>This project dependent on react-ace. But there is a bug and a feature have not been merged to the original repository. This project can be built without error but it will raise error when run. </p>
-
-<blockquote>
-<p>npm install // install dependencies</p>
-
-<p>npm run watch // you can open localhost:8080 to try it</p>
-
-<p>npm run build // generate build files in dist folder</p>
-
-<p>PRODUCTION=1 npm run build // build minified version of build files</p>
-</blockquote>
-
-<h1>
-<a id="notice" class="anchor" href="#notice" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notice</h1>
-
-<p>This tool has not been pushed into Chrome App Store. I am trying to get the developer fee paid first. Not about money, but I cannot pay it easily in China.</p>
-
-<p>You can load it to Chrome directly after building(a new folder called dist is generated).</p>
-
-<p><img src="http://i.imgur.com/AJ98GJj.jpg" alt="Imgur"></p>
-
-<p>Turn on Developer mode &amp;&amp; Load unpacked extension. Click the new icon appeared on the right of address bar. You got it :)</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
         <p class="copyright">Smart Websocket Client maintained by <a href="https://github.com/crysislinux">crysislinux</a></p>
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    </footer>
+</div>
 
-    
-
-  </body>
+<script src="javascripts/common.js"></script>
+<script src="javascripts/app.js"></script>
+</body>
 </html>
