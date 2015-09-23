@@ -24,3 +24,13 @@ I checked websocket clients in chrome web store and I am using Simple Websocket 
 > npm run build // generate build files in dist folder
 
 > PRODUCTION=1 npm run build // build minified version of build files
+
+# Notice
+
+This tool has not been pushed into Chrome App Store. I am trying to get the developer fee paid first. Not about money, but I cannot pay it easily in China.
+
+You can load it to Chrome directly after building(a new folder called dist is generated).
+ 
+![Imgur](http://i.imgur.com/AJ98GJj.jpg)
+
+Turn on Developer mode && Load unpacked extension. Click the new icon appeared on the right of address bar. You got it :)
