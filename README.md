@@ -1,6 +1,8 @@
 # Smart Websocket Client
 Smart Websocket Client is a chrome extension to help developers develop and test websocket.
 
+[Try it online](http://crysislinux.github.io/smart_websocket_client/)
+
 # Why another websocket client
 I checked websocket clients in chrome web store and I am using Simple Websocket Client. It is a great tool for testing. But it still lack some features. I hope that Smart Websocket Client will fill the gap.
 
