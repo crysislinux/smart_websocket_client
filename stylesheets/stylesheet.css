@@ -361,7 +361,8 @@ Full-Width Styles
 }
 
 #main_content {
-  padding-top: 40px;
+  padding: 20px 8px 20px 0;
+  min-height: 860px;
 }
 
 #footer_wrap {
@@ -422,4 +423,10 @@ Small Device Styles
     font-size: 11px;
   }
 
+}
+
+/*todo: set this in component css*/
+.Y8axx ul {
+  margin-top: 12px;
+  padding: 0;
 }
