@@ -11,7 +11,7 @@
     "lodash": "^3.10.1",
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
-    "react-ace": "^2.3.0",
+    "react-ace": "^2.5.0",
     "react-router": "^1.0.0-rc1"
   },
   "devDependencies": {
@@ -29,7 +29,7 @@
     "webpack-dev-server": "^1.10.1"
   },
   "scripts": {
-    "build" : "./scripts/build.sh",
+    "build": "./scripts/build.sh",
     "watch": "webpack-dev-server --hot --inline --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
