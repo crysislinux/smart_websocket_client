@@ -20,9 +20,10 @@ I checked websocket clients in chrome web store and I am using Simple Websocket 
 # Install && Build
 
 ### Important
-This project dependent on react-ace. But there is a bug and a feature have not been merged to the original repository. This project can be built without error but it will raise error when run. 
 
 > npm install // install dependencies
+
+You should run npm install first before the following operation. 
 
 > npm run watch // you can open localhost:8080 to try it
 
