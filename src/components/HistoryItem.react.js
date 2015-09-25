@@ -4,6 +4,10 @@ import styles from '../assets/styles/components/history.css';
 
 
 var HistoryItem = React.createClass({
+  propTypes: {
+    request: React.PropTypes.object
+  },
+
   _onClick() {
     HistoryActions.loadRequest(this.props.request);
   },
