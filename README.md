@@ -40,3 +40,7 @@ You can load it to Chrome directly after building(a new folder called dist is ge
 ![Imgur](http://i.imgur.com/AJ98GJj.jpg)
 
 Turn on Developer mode && Load unpacked extension. Click the new icon appeared on the right of address bar. You got it :)
+
+# License
+
+[MIT](http://markdalgleish.mit-license.org/)
