@@ -8,22 +8,17 @@ import Messages from './Messages.react';
 import styles from '../assets/styles/components/websocketClient.css';
 
 
-var content = {
-  action: 'order.index',
-  params: {}
-};
-
 var WebsocketClient = React.createClass({
   render() {
     return (
       <div className={styles.root}>
         <div className={styles.sidebar}>
-          <History content='I am history' />
+          <History />
         </div>
         <div className={styles.content}>
           <Messages />
           <AddressBar />
-          <Content content={JSON.stringify(content)} />
+          <Content />
           <Result />
         </div>
       </div>
