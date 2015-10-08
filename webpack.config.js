@@ -55,7 +55,7 @@ var config = {
   ],
 
   debug: true,
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     historyApiFallback: true
