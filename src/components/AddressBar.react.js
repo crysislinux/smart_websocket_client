@@ -43,7 +43,7 @@ var AddressBar = React.createClass({
     var text = this.state.websocket.connected ? 'Disconnect' : 'Connect';
     return (
       <div className={styles.root}>
-        <input className={styles.input} type="text" placeholder="Websocket address" value={this.state.websocket.address} onChange={this._onAddressChange} />
+        <input className={styles.input} type="text" placeholder="ws://localhost:3002" value={this.state.websocket.address} onChange={this._onAddressChange} />
         <button className={buttonStyle.button} type="button" onClick={this._onClick}>{text}</button>
       </div>
     );
