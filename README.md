@@ -31,6 +31,8 @@ You should run npm install first before the following operation.
 
 > PRODUCTION=1 npm run build // build minified version of build files
 
+> open http://localhost:8080
+
 # Notice
 
 This tool has not been pushed into Chrome App Store. I am trying to get the developer fee paid first. Not about money, but I cannot pay it easily in China.
