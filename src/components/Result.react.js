@@ -46,12 +46,14 @@ var Result = React.createClass({
   render() {
     return (
       <div className={styles.root}>
-        <label>History: </label>
-        <input type="checkbox">Decode with protocol buffer</input>
-        <button type="button" className={buttonStyles.buttonClear} onClick={this._onClear}>Clear</button>
+        <div className={styles.control}>
+         <label className={styles.label}>History: </label>
+         <button type="button" className={buttonStyles.buttonClear} onClick={this._onClear}>Clear</button>
+         <input className={styles.input} type="checkbox">Decode with protocol buffer</input>
+        </div>
         <AceEditor
           className={styles.contentEditor}
-          height="360"
+          height="400"
           width="50%"
           name="resultEditor"
           value={this._formattedCode(this.state.content)}

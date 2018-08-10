@@ -48,10 +48,10 @@ var Content = React.createClass({
     return (
       <div className={styles.root}>
         <div className={styles.control}>
-         <label>Edit a message to send:</label>
-         <input type="checkbox">Encode with protocol buffer</input>
+         <label className={styles.label}>Edit a message to send:</label>
          <button type="button" className={buttonStyles.button} onClick={this._onClick}>Send</button>
          <button type="button" className={buttonStyles.buttonClear} onClick={this._onClear}>Clear</button>
+         <input className={styles.input} type="checkbox">Encode with protocol buffer</input>
         </div>
         <AceEditor
           className={styles.contentEditor}
