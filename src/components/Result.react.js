@@ -46,7 +46,7 @@ var Result = React.createClass({
   render() {
     return (
       <div className={styles.root}>
-        <label>Respond: </label>
+        <label>History: </label>
         <input type="checkbox">Decode with protocol buffer</input>
         <button type="button" className={buttonStyles.buttonClear} onClick={this._onClear}>Clear</button>
         <AceEditor
