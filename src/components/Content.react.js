@@ -28,6 +28,12 @@ var Content = React.createClass({
     WebsocketActions.sendData(this.state.content);
   },
 
+  _onClear(){
+    this.setState({
+      content: ""
+    })
+  },
+
   _onContentChange(data) {
     WebsocketActions.requestDataChanged(data);
   },
@@ -41,23 +47,22 @@ var Content = React.createClass({
   render() {
     return (
       <div className={styles.root}>
-        <div className={styles.root}>
-        <label>Input a message to send: </label>
-        <button type="button" className={buttonStyles.button} onClick={this._onClick}>Send</button>
-        <button type="button" className={buttonStyles.buttonClear} onClick={this._onClick}>Clear</button>
+        <div className={styles.control}>
+         <label>Edit a message to send:</label>
+         <input type="checkbox">Encode with protocol buffer</input>
+         <button type="button" className={buttonStyles.button} onClick={this._onClick}>Send</button>
+         <button type="button" className={buttonStyles.buttonClear} onClick={this._onClear}>Clear</button>
         </div>
         <AceEditor
           className={styles.contentEditor}
-          mode="javascript"
-          theme="github"
           height="300"
-          width="100%"
+          width="50%"
           tabSize={2}
           onChange={this._onContentChange}
           name="contentEditor"
           value={this.state.content}
           editorProps={{$blockScrolling: Infinity}}
-          />
+        />
       </div>
     );
   }
