@@ -41,7 +41,11 @@ var Content = React.createClass({
   render() {
     return (
       <div className={styles.root}>
+        <div className={styles.root}>
+        <label>Input a message to send: </label>
         <button type="button" className={buttonStyles.button} onClick={this._onClick}>Send</button>
+        <button type="button" className={buttonStyles.buttonClear} onClick={this._onClick}>Clear</button>
+        </div>
         <AceEditor
           className={styles.contentEditor}
           mode="javascript"

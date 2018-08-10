@@ -39,6 +39,7 @@ var Result = React.createClass({
   render() {
     return (
       <div className={styles.root}>
+        <label>Result</label>
         <AceEditor
           className={styles.contentEditor}
           mode="javascript"
