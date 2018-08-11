@@ -7,6 +7,7 @@
     "alt": "^0.17.3",
     "babel-runtime": "^5.8.24",
     "brace": "^0.5.1",
+    "history": "^1.0.0",
     "js-beautify": "^1.5.10",
     "lodash": "^3.10.1",
     "object-assign": "^4.0.1",

@@ -7,6 +7,7 @@
   color:#ffffff;
   font-family:Arial sans-serif;
   font-size:14px;
+  margin-left: 8px;
   padding:4px 8px;
   text-decoration:none;
   text-shadow:0 1px 0 #2f6627;
@@ -19,4 +20,28 @@
 
 .button:active {
   background-color:darkgreen;
+}
+
+.buttonClear {
+  background-color:#CD5C5C;
+  border-radius:5px;
+  border:1px solid #800000;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial sans-serif;
+  font-size:14px;
+  margin-left: 8px;
+  padding:4px 8px;
+  text-decoration:none;
+  text-shadow:0 1px 0 #800000;
+  outline: none;
+}
+
+.buttonClear:hover {
+  background-color:#F08080;
+}
+
+.buttonClear:active {
+  background-color:darkred;
 }

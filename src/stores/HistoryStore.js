@@ -2,7 +2,6 @@ import alt from '../alt';
 import WebsocketActions from '../actions/WebsocketActions';
 import HistoryActions from '../actions/HistoryActions';
 
-
 class HistoryStore {
   constructor() {
     this.requests = [];

@@ -85,6 +85,6 @@
   float: right;
 }
 
-.clearButton {
-  composes: button from './button.css'
+.ButtonClear {
+  composes: buttonClear from './button.css'
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import WebsocketStore from '../stores/WebsocketStore';
 import styles from '../assets/styles/components/result.css';
+import buttonStyles from '../assets/styles/components/button.css'
 import AceEditor from 'react-ace';
 import 'brace/mode/javascript';
 import 'brace/theme/github';
@@ -32,6 +33,12 @@ var Result = React.createClass({
     });
   },
 
+  _onClear() {
+    this.setState({
+      content: ""
+    });
+  },
+
   _formattedCode(content) {
     return content && beautifier(content, {indent_size: 2})
   },
@@ -39,12 +46,15 @@ var Result = React.createClass({
   render() {
     return (
       <div className={styles.root}>
+        <div className={styles.control}>
+         <label className={styles.label}>History: </label>
+         <button type="button" className={buttonStyles.buttonClear} onClick={this._onClear}>Clear</button>
+         <input className={styles.input} type="checkbox">Decode with protocol buffer</input>
+        </div>
         <AceEditor
           className={styles.contentEditor}
-          mode="javascript"
-          theme="github"
-          height="360"
-          width="100%"
+          height="400"
+          width="50%"
           name="resultEditor"
           value={this._formattedCode(this.state.content)}
           readOnly={true}

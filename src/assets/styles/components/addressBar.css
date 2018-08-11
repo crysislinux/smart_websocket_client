@@ -4,8 +4,12 @@
   display: flex;
 }
 
+.label {
+  padding: 4px 8px;
+}
+
 .input {
-  flex-grow: 1;
+  flex-grow: 0.1;
   margin-right: 20px;
   padding: 4px 8px;
   border-radius: 2px;

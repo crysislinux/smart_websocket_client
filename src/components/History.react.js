@@ -44,7 +44,7 @@ var History = React.createClass({
         <div className={styles.header}>
           <label className={styles.title}>History</label>
           <div className={styles.actions}>
-            <button className={styles.clearButton} type="button" onClick={this._onClearClicked}>Clear</button>
+            <button className={styles.ButtonClear} type="button" onClick={this._onClearClicked}>Clear</button>
           </div>
         </div>
 
